@@ -106,8 +106,8 @@ configure_chroot() {
 }
 
 install_packages() {
-	patterns="enhanced_base bootloader yast2_basis yast2_server kde-microos"
-	packages="zypper kernel-default dracut wicked command-not-found lvm2 man iptables iputils openssh-server"
+	patterns="enhanced_base microos-basesystem install_wf microos-desktop-common file_server mail_server sw_managemsnt containers-container_runtime bootloader yast2_basis yast2_server enlightenment kde-microos OBS_Server server network cockpit rpm-microos microos-cloud openSUSEway containers ceph-containers"
+	packages="zypper kernel-default dracut wicked command-not-found lvm2 man iptables iputils openssh-server kernel-kvm-small"
 	chroot_exec "zypper -i --root=/mnt in -y -t pattern $patterns"
 	
 	# avoid https failures
